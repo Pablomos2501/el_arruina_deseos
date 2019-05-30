@@ -1,4 +1,4 @@
-#diccionario={"a":"negro","b":"loca","c":"ella"}
+#diccionario={"a":"negro","b":"loca","c":"ella"}t
 from tkinter import *
 from tkinter import messagebox
 #variables del carro
