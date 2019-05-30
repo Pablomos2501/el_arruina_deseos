@@ -22,8 +22,9 @@ def desear():
         messagebox.showinfo("TACHAN", f"concedido tendras un {respuesta.get()} aun asi el {complemento.get()} te explotara en la cara y moriras")
     elif respuesta.get()=="carro" and complemento.get()=="nuevo":
          messagebox.showinfo("TACHAN", f"concedido tendras un {respuesta.get()}  {complemento.get()} espero te guste el rosado")
-    elif respuesta.get()=="carro" or complemento.get()=="":
-        messagebox.showinfo("XD", f"felicidades aqui esta tu carro sin motor es super viejo y ademas no funciona")  
+    elif respuesta.get()=="carro" and complemento.get()!="":
+        messagebox.showinfo("XD", f"no es la palabra que esperaba pero me compadecere de ti aqui esta tu carro sin motor es super viejo y ademas no funciona")
+      
     #juegos
     elif respuesta.get()=="videojuego" and complemento.get()=="nuevo":
         messagebox.showinfo("TACHAN", f"concedido tienes el  {respuesta.get()}  {complemento.get()} que deseas ")
@@ -31,33 +32,35 @@ def desear():
         messagebox.showinfo("TACHAN", f"concedido tu  {respuesta.get()}  {complemento.get()} se a instalado pero con un virus que arruino tu consola y TV")    
     elif respuesta.get()=="videojuego" and complemento.get()=="para pc":
         messagebox.showinfo("TACHAN", f"concedido tu  {respuesta.get()}  {complemento.get()} se a instalado pero cada vez que lo juegas se escuha el audio de los gemidos a todo volumen")
-    elif respuesta.get()=="videojuego" or complemento.get()=="":
-         messagebox.showinfo("XD", f"felicidades aqui esta viedeojuego pero esta tan viejo y usado ni si quiera es digital y mucho menos para pc")
+    elif respuesta.get()=="videojuego" and complemento.get()!="":
+         messagebox.showinfo("XD", f"Crees que soy tonto -_- aqui esta viedeojuego pero esta tan viejo y usado ni si quiera es digital y mucho menos para pc")
     #novia
     elif respuesta.get()=="novia" and complemento.get()=="mujer":
         messagebox.showinfo("TACHAN", f"concedido has encontrado a la  {complemento.get()} que deseas ")
     
-    else:
-        messagebox.showinfo("Heey", f"como no deseas nada nadie e desea a ti")
+    elif respuesta.get()=="" or complemento.get()=="":
+        messagebox.showinfo("Heey", f"acaso no sabes leer instrucciones")
 
 juego=Tk()
 juego.geometry("700x500+100+100")
 juego.title("El Arruina Deseos ")
+imagen=PhotoImage(file="Alicardia.png")
+fondo=Label(juego,image=imagen).place(x=450,y=280)
 
-lbl=Label(text="puedes perdir un deseo").pack()
-lbl1=Label(text="pero ojo solo puedes pedir tu deseo con las siguientes palabras").place(x=10,y=40)
-lbl2=Label(text="auto, "+"videojuego, "+"novia.").place(x=10,y=60)
-lbl3=Label(text="Pero para que deberas se haga realidad tienes que complemetnarlo pero solo puedes especificarlo con una palabra").place(x=10,y=90)
+lbl=Label(text="_________________________El Arruina Deseos_________________________", font=("comic sans ms", 14)).pack()
+lbl1=Label(text="pero ojo solo puedes pedir tu deseo con las siguientes palabras", font=("comic sans ms", 12)).place(x=10,y=40)
+lbl2=Label(text="auto, "+"videojuego, "+"novia.", font=("comic sans ms", 12)).place(x=10,y=64)
+lbl3=Label(text="Pero para que deberas se haga realidad tienes que complemetnarlo "+'\n' " pero solo puedes especificarlo con una palabra...  a por cierto estate atento a las pistas",font=("comic sans ms", 12)).place(x=10,y=90)
 
 lbl5=Label(text="Deseo un/a").place(x=10,y=160)
 respuesta=StringVar()
 texbox1=Entry(juego,textvariable=respuesta).place(x=90,y=160)
 
-lbl6=Label(text="con que lo complementaras ").place(x=10,y=190)
+lbl6=Label(text="¿Con que lo complementaras? ").place(x=10,y=190)
 complemento=StringVar()
-texbox2=Entry(juego,textvariable=complemento).place(x=170,y=190)
+texbox2=Entry(juego,textvariable=complemento).place(x=190,y=190)
 
-boton=Button(juego,text="pedir deseo ",command=desear).place(x=10,y=210)
+boton=Button(juego,text="pedir deseo",font=("comic sans ms", 14) ,command=desear).place(x=10,y=230)
 
 juego.mainloop()
 
